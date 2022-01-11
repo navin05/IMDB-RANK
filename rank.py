@@ -24,10 +24,9 @@ a = soup.find_all('td',attrs={"class":"ratingColumn imdbRating"})
 for i in range(0,len(Ran)):
     
     r = Ran[i].text.strip()
-    print(r.split('.')[1])
-    
+    # print(r.split('.')[1])
     Rank.append(r.split('.')[0])
-    Title.append(r.split('.')[1])
+    Title.append(Ran[i].find('a').text.strip())
 for j in range(0,len(a)):
     print(a[j].text.strip())
     Rating.append(a[j].text.strip())
